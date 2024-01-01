@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Import Tax Calculator">
+	<title>คำนวณภาษีนำเข้า</title>
+	<link rel="stylesheet" href="import-tax-calculator.css">
+	<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="container">
+		<h2>
+			<div align="left">
+				คำนวณภาษีนำเข้า
+			</div>
+		</h2>
+		<!-- <label for="cifPrice">ราคา C.I.F. (บาท): </label>
+		<input type="text" id="cifPrice" placeholder="ระบุราคา C.I.F."> -->
+		<!-- <label for="importDutyRate">อัตราอากรขาเข้า (%): </label>
+		<input type="text" id="importDutyRate" placeholder="ระบุอัตราอากรขาเข้า"> -->
+
+		<!-- Usage Main this!! ------------------------------------------------------------------>
+		<div class="inputBox">
+			<input id="cifPrice" placeholder="ระบุราคา C.I.F." type="text" required="">
+			<span>ราคา C.I.F. (บาท):</span>
+		</div>
+		<div class="inputBox">
+			<input id="importDutyRate" placeholder="ระบุอัตราอากรขาเข้า" name="text" required="">
+			<span>อัตราอากรขาเข้า (%):</span>
+		</div>
+		<!--------------------------------------------------------------------------------------->
+
+		<!-- <button onclick="calculateTax()" class="Btn">คำนวณภาษี</button> -->
+		<button class="button-50" role="button"><span class="text" onclick="calculateTax()">คำนวณภาษี</span></button>
+
+		<!-- Usage Main this Button!! ------------------------------------------------------------>
+		<div class="categories">
+			<h2>
+				<div align="left">
+					Product Category
+				</div>
+			</h2>
+			<button class="button-category" data-import-duty-rate="30">
+				Accessory (no-battery)
+			</button>
+			<button class="button-category" data-import-duty-rate="10">Accessory (with battery)</button>
+			<button class="button-category" data-import-duty-rate="20">Bags & Luggages</img></button>
+			<button class="button-category" data-import-duty-rate="10">Board Game</button>
+			<button class="button-category" data-import-duty-rate="10">Audio Video</button>
+			<button class="button-category" data-import-duty-rate="0">Camera</button>
+			<button class="button-category" data-import-duty-rate="0">Computer & Laptop</button>
+			<button class="button-category" data-import-duty-rate="10">Gaming</button>
+			<button class="button-category" data-import-duty-rate="35">Dry food & supplements</button>
+			<button class="button-category" data-import-duty-rate="30">Fashion</button>
+			<button class="button-category" data-import-duty-rate="5">Health & beauty</button>
+			<button class="button-category" data-import-duty-rate="20">Home appliances	</button>
+			<button class="button-category" data-import-duty-rate="0">Mobile phones & tablets</button>
+			<button class="button-category" data-import-duty-rate="7">Pet accessory</button>
+			<button class="button-category" data-import-duty-rate="30">Shoes</button>
+			<button class="button-category" data-import-duty-rate="10">Sport & leisure</button>
+			<button class="button-category" data-import-duty-rate="5">Toys</button>
+			<button class="button-category" data-import-duty-rate="10">Watches</button>
+		</div>
+		<!--------------------------------------------------------------------------------------->
+	</div>
+
+	<!-- Usage Main this Detail & Result!! ------------------------------------------------------>
+	<div class="container">
+		<h2>
+			<div align="left">
+				ผลการคำนวณ
+			</div>
+		</h2>
+		<div id="result">
+			<p id="importDuty">อากรขาเข้า (บาท): <span id="importDutyAmount">0</span></p>
+			<p id="vat">ภาษีมูลค่าเพิ่ม (บาท): <span id="vatAmount">0</span></p>
+			<p id="totalTax">ยอดภาษีนำเข้า (บาท): <span id="totalTaxAmount">0</span></p>
+		</div>
+	</div>
+	<!------------------------------------------------------------------------------------------>
+	<script src="import-tax-calculator.js"></script>
+</body>
+
+</html>

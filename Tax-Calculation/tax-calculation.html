@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>คำนวณภาษี</title>
+	<link rel="stylesheet" href="tax-calculation.css">
+</head>
+<body>
+	<div class="calculator">
+		<h1>คำนวณภาษี</h1>
+		<label for="income">รายได้ต่อปี:</label>
+		<input type="number" id="income" placeholder="กรอกรายได้">
+
+		<label for="deductions">ลดหย่อน:</label>
+		<input type="number" id="deductions" placeholder="กรอกลดหย่อน">
+		
+		<button onclick="calculateTax()">คำนวณภาษี</button>
+		
+		<div id="result"></div>
+	</div>
+
+	<script src="tax-calculation.js"></script>
+</body>
+</html>

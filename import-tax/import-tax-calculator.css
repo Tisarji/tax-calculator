@@ -1,0 +1,189 @@
+/* styles.css */
+
+.container {
+	max-width: 1000px;
+	margin: 50px auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	background-color: #FFE5DA;
+}
+
+.categories {
+	max-width: 800px;
+	margin: 50px auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	background-color: #FFE5DA;
+}
+
+.button-category img {
+	display: block;
+	width: 35px;  /* Set the desired width */
+	height: 35px; /* Set the desired height */
+	margin: auto;
+}
+
+body {
+	font-family: 'Kanit', sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #ddcac2;
+}
+
+/* ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+span {
+	font-weight: bold;
+	margin-right: 5px;
+} */
+
+label {
+	display: inline;
+	margin-bottom: 10px;
+}
+
+/* input {
+	width: 30%;
+	padding: 8px;
+	margin-bottom: 15px;
+} */
+
+/* button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	display: inline-block;
+} */
+
+#result {
+	margin-top: 20px;
+}
+
+/* Button for Category! */
+.button-category {
+	--b: 3px;   /* border thickness */
+	--s: .45em; /* size of the corner */
+	--color: #373B44;
+
+	width: 250px;
+	padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+	color: var(--color);
+	--_p: var(--s);
+	background:
+		conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+		var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+	transition: .3s linear, color 0s, background-color 0s;
+	outline: var(--b) solid #0000;
+	outline-offset: .6em;
+	font-size: 16px;
+
+	border: 0;
+
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	display: inline-block;
+}
+
+.button-category:hover ,.button-89:focus-visible{
+	--_p: 0px;
+	outline-color: var(--color);
+	outline-offset: .05em;
+}
+
+.button-category:active {
+	background: var(--color);
+	color: #fff;
+}
+
+/* Cool Input*/
+
+.inputBox {
+	position: relative;
+	display: inline-block;
+	width: 25%;
+}
+
+.inputBox input {
+	padding: 15px 20px;
+	outline: none;
+	background: transparent;
+	border-radius: 5px;
+	color: #212121;
+	border: 1px solid#212121;
+	font-size: 1em;
+	font-family: 'Kanit', sans-serif;
+}
+
+.inputBox span {
+	position: absolute;
+	left: 0;
+	font-size: 0.7em;
+	transform: translateX(14px) translateY(-7.5px);
+	padding: 0 6px 1px 5px;
+	border-radius: 2px;
+	background: #d8c4c4;
+	letter-spacing: 1px;
+	border: 1px solid #212121;
+	color: #212121;
+}
+
+/* Button Template */
+.button-50 {
+	appearance: button;
+	background-color: #000;
+	background-image: none;
+	border: 1px solid #000;
+	border-radius: 4px;
+	box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: 'Kanit', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	margin: 0 5px 10px 0;
+	overflow: visible;
+	padding: 12px 40px;
+	text-align: center;
+	text-transform: none;
+	touch-action: manipulation;
+	user-select: none;
+	-webkit-user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.button-50:focus {
+	text-decoration: none;
+}
+
+.button-50:hover {
+	text-decoration: none;
+}
+
+.button-50:active {
+	box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+	outline: 0;
+}
+
+.button-50:not([disabled]):active {
+	box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+	transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+	.button-50 {
+		padding: 12px 50px;
+	}
+}

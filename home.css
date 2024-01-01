@@ -1,0 +1,49 @@
+@import "https://fonts.googleapis.com/css?family=Press%20Start%202P";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	font-family: 'Press Start 2P';
+	font-size: 1rem;
+	line-height: 2;
+	height: 100%;
+	background-color: #FFE5DA;
+	text-transform: uppercase;
+}
+
+a {
+	text-decoration: none;
+	color: #CDA1AC;
+}
+
+li {
+	color: #005C7D;
+}
+
+.arrow i {
+	display: none;
+}
+
+.arrow {
+	position:relative;
+	display: block;
+	color: #005c7da8;
+}
+
+.arrow:hover {
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.2);
+}
+
+.arrow:hover i { 
+	display: block;
+	position: absolute;
+	top: 0.50em; 
+	left: -6em;
+}
