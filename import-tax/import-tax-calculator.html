@@ -7,6 +7,7 @@
 	<title>คำนวณภาษีนำเข้า</title>
 	<link rel="stylesheet" href="import-tax-calculator.css">
 	<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&display=swap" rel="stylesheet">
+	<link rel="icon" href="../img/icon.svg" type="image/x-icon">
 </head>
 
 <body>
@@ -24,11 +25,11 @@
 
 		<!-- Usage Main this!! ------------------------------------------------------------------>
 		<div class="inputBox">
-			<input id="cifPrice" placeholder="ระบุราคา C.I.F." type="text" required="">
+			<input id="cifPrice" placeholder="ระบุราคา C.I.F." type="text" required="" oninput="formatInputWithCommas(event)">
 			<span>ราคา C.I.F. (บาท):</span>
 		</div>
 		<div class="inputBox">
-			<input id="importDutyRate" placeholder="ระบุอัตราอากรขาเข้า" name="text" required="">
+			<input id="importDutyRate" placeholder="ระบุอัตราอากรขาเข้า" name="text" required="" oninput="formatInputWithCommas(event)">
 			<span>อัตราอากรขาเข้า (%):</span>
 		</div>
 		<!--------------------------------------------------------------------------------------->
@@ -75,9 +76,21 @@
 			</div>
 		</h2>
 		<div id="result">
-			<p id="importDuty">อากรขาเข้า (บาท): <span id="importDutyAmount">0</span></p>
-			<p id="vat">ภาษีมูลค่าเพิ่ม (บาท): <span id="vatAmount">0</span></p>
-			<p id="totalTax">ยอดภาษีนำเข้า (บาท): <span id="totalTaxAmount">0</span></p>
+			<div class="inputBox">
+				<input id="importDutyAmount" placeholder="อากรขาเข้า" name="text" required="" disabled="true">
+				<span>อากรขาเข้า (บาท):</span>
+			</div>
+			<div class="inputBox">
+				<input id="vatAmount" placeholder="ภาษีมูลค่าเพิ่ม (VAT)" name="text" required="" disabled="true">
+				<span>ภาษีมูลค่าเพิ่ม (บาท):</span>
+			</div>
+			<div class="inputBox">
+				<input id="totalTaxAmount" placeholder="ยอดรวม" name="text" required="" disabled="true">
+				<span>ยอดภาษีนำเข้า</span>
+			</div>
+			<!-- <p id="importDuty">อากรขาเข้า (บาท): <span id="importDutyAmount">0</span></p> -->
+			<!-- <p id="vat">ภาษีมูลค่าเพิ่ม (บาท): <span id="vatAmount">0</span></p> -->
+			<!-- <p id="totalTax">ยอดภาษีนำเข้า (บาท): <span id="totalTaxAmount">0</span></p> -->
 		</div>
 	</div>
 	<!------------------------------------------------------------------------------------------>
