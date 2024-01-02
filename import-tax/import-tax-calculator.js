@@ -1,11 +1,13 @@
 // import-tax-calculator.js
 
 function formatNumberWithCommas(number) {
-	return number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+	let parts = number.toFixed(2).toString().split('.');
+	parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+	return parts.join('.');
 }
 
 function parseFloatWithCommas(value) {
-	return parseFloat(value.replace(/,/g, ''));
+	return parseFloat(value.replace(/[^\d.]/g, ''));
 }
 
 function setImportDutyRate(rate) {
@@ -15,8 +17,7 @@ function setImportDutyRate(rate) {
 function formatInputWithCommas(event) {
 	let inputValue = event.target.value;
 
-
-	inputValue = inputValue.replace(/[^\d.]/g, ''); // Remove non-digit and non-decimal characters
+	inputValue = inputValue.replace(/[^\d.,]/g, '');
 	let parts = inputValue.split('.');
 
 	if (parts.length > 1) {
@@ -28,11 +29,8 @@ function formatInputWithCommas(event) {
 	let formattedValue = parseFloatWithCommas(inputValue).toLocaleString('en-US', {
 		minimumFractionDigits: 2,
 		maximumFractionDigits: 2
-	});
-
-	if (event.target.value !== formattedValue) {
-		event.target.value = formattedValue;
-	}
+    });
+	event.target.value = formattedValue;
 }
 
 function calculateTax() {
@@ -60,4 +58,26 @@ document.querySelectorAll('.button-category').forEach(button => {
 		});
 		this.classList.add('active');
 	});
+});
+
+
+document.getElementById('cifPrice').addEventListener('input', event => {
+	event.preventDefault();
+	let text = event.target.value.replace(/[^\d\.]/gi, '');
+	let lastCharIsAdot = text.substr(text.length - 1, 1) === ".";
+
+	if (isNaN(text)) {
+		event.target.classList.remove('valid');
+		event.target.classList.add('invalid');
+	}
+	else 
+	{
+		event.target.classList.remove('invalid');
+		event.target.classList.add('valid');
+
+		event.target.value = Number(text).toLocaleString("en-US");
+
+		if (lastCharIsAdot)
+			event.target.value += ".";
+	}
 });
