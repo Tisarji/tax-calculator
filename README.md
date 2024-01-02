@@ -2,17 +2,6 @@
 
 This is a simple web-based import tax calculator designed to help users estimate the import duty and VAT (Value Added Tax) for goods based on the CIF (Cost, Insurance, and Freight) price and the specified import duty rate. The calculator also provides a list of product categories with predefined import duty rates for quick selection.
 
-## Table of Contents
-
-- [Import Tax Calculator](#import-tax-calculator)
-	- [Table of Contents](#table-of-contents)
-	- [Features](#features)
-	- [Usage](#usage)
-	- [Categories](#categories)
-	- [Customization](#customization)
-	- [Contributing](#contributing)
-	- [License](#license)
-
 ## Features
 
 - **Input Validation:** The calculator ensures that only valid numerical inputs are accepted for CIF price and import duty rate.
