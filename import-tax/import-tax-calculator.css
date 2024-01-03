@@ -6,8 +6,8 @@
 	padding: 20px;
 	border: 1px solid #ccc;
 	border-radius: 10px;
-	background-color: #FFE5DA;
-	/* background-color: #FFFFFF; */
+	/* background-color: #FFE5DA; */
+	background-color: #FFFFFF;
 }
 
 .categories {
@@ -16,16 +16,16 @@
 	padding: 20px;
 	border: 1px solid #ccc;
 	border-radius: 10px;
-	background-color: #FFE5DA;
-	/* background-color: #ffffffa4; */
+	/* background-color: #FFE5DA; */
+	background-color: #ffffffa4;
 }
 
 body {
 	font-family: 'Kanit', sans-serif;
 	margin: 0;
 	padding: 0;
-	background-color: #ddcac2;
-	/* background-color: #b6b4b4; */
+	/* background-color: #ddcac2; */
+	background-color: #000000;
 }
 
 /* ul {
@@ -108,14 +108,14 @@ label {
 	--_p: 0px;
 	outline-color: var(--color);
 	outline-offset: .05em;
-	background-color: #6bf96b;
+	background-color: #72b572;
 }
 
-/* Cool Input*/
+/* Detail Input*/
 
 .inputBox {
 	position: relative;
-	display: inline-block;
+	display: inline;
 	width: 25%;
 }
 
@@ -124,7 +124,8 @@ label {
 	outline: none;
 	background: transparent;
 	border-radius: 5px;
-	color: #212121;
+	/* color: #212121; */
+	color: #000000;
 	border: 1px solid#212121;
 	font-size: 1em;
 	font-family: 'Kanit', sans-serif;
@@ -137,10 +138,49 @@ label {
 	transform: translateX(14px) translateY(-7.5px);
 	padding: 0 6px 1px 5px;
 	border-radius: 2px;
-	background: #d8c4c4;
+	/* background: #d8c4c4; */
+	background: #000000;
 	letter-spacing: 1px;
 	border: 1px solid #212121;
-	color: #212121;
+	/* color: #212121; */
+	color: #ffffffc3;
+}
+
+/* Result Input*/
+
+.inputBox-Result {
+	position: relative;
+	display: inline;
+	width: 25%;
+}
+
+.inputBox-Result input {
+	padding: 15px 20px;
+	outline: none;
+	background: transparent;
+	background-color: #8abae2;
+	border-radius: 5px;
+	/* color: #212121; */
+	color: #000000;
+	border: 1px solid#212121;
+	font-size: 1em;
+	font-family: 'Kanit', sans-serif;
+	-webkit-text-stroke: 1.3px black; /* Width and color of the text border */
+}
+
+.inputBox-Result span {
+	position: absolute;
+	left: 0;
+	font-size: 0.7em;
+	transform: translateX(14px) translateY(-7.5px);
+	padding: 0 6px 1px 5px;
+	border-radius: 2px;
+	/* background: #d8c4c4; */
+	background: #000000;
+	letter-spacing: 1px;
+	border: 1px solid #212121;
+	/* color: #212121; */
+	color: white;
 }
 
 /* Button Template */

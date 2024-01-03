@@ -44,6 +44,7 @@ function calculateTax() {
 	document.getElementById("importDutyAmount").value = formatNumberWithCommas(importDuty);
 	document.getElementById("vatAmount").value = formatNumberWithCommas(vat);
 	document.getElementById("totalTaxAmount").value = formatNumberWithCommas(totalTax);
+	document.getElementById("totalAmount").value = formatNumberWithCommas(cifPrice + totalTax);
 
 	document.getElementById("result").scrollIntoView({ behavior: 'smooth' });
 }
