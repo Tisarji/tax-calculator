@@ -1,8 +1,8 @@
 @import "https://fonts.googleapis.com/css?family=Press%20Start%202P";
 
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 html, body {
@@ -24,6 +24,10 @@ a {
 
 li {
 	color: #FFFFFF;
+}
+
+.emoji-flag {
+	font-size: 1.5rem;
 }
 
 .arrow i {
