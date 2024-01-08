@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Import Tax Calculator">
-	<title>คำนวณภาษีนำเข้า</title>
+	<title>Calculate Import Tax</title>
 	<link rel="stylesheet" href="import-tax-calculator.css">
 	<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&display=swap" rel="stylesheet">
 	<link rel="icon" href="../img/Tisarji.png" type="image/x-icon">
@@ -13,11 +13,8 @@
 <body>
 
 	<div class="container">
-		<h2>
-			<div align="left">
-				คำนวณภาษีนำเข้า
-			</div>
-		</h2>
+		<h2>Calculate Import Tax</h2>
+
 		<!-- <label for="cifPrice">ราคา C.I.F. (บาท): </label>
 		<input type="text" id="cifPrice" placeholder="ระบุราคา C.I.F."> -->
 		<!-- <label for="importDutyRate">อัตราอากรขาเข้า (%): </label>
@@ -25,17 +22,17 @@
 
 		<!-- Usage Main this!! ------------------------------------------------------------------>
 		<div class="inputBox">
-			<input id="cifPrice" placeholder="ระบุราคา C.I.F." type="text" required="" oninput="salary">
-			<span>ราคา C.I.F. (บาท):</span>
+			<input id="cifPrice" placeholder="Enter C.I.F. Price" type="text" required="" oninput="calculateSalary">
+			<span>Price C.I.F. (THB):</span>
 		</div>
 		<div class="inputBox">
-			<input id="importDutyRate" placeholder="ระบุอัตราอากรขาเข้า" name="text" required="" oninput="formatInputWithCommas(event)">
-			<span>อัตราอากรขาเข้า (%):</span>
+			<input id="importDutyRate" placeholder="Enter Import Duty Rate" name="text" required="" oninput="formatInputWithCommas(event)">
+			<span>Import Duty Rate (%):</span>
 		</div>
 		<!--------------------------------------------------------------------------------------->
 
 		<!-- <button onclick="calculateTax()" class="Btn">คำนวณภาษี</button> -->
-		<button class="button-50" role="button"><span class="text" onclick="calculateTax()">คำนวณภาษี</span></button>
+		<button class="button-50" role="button"><span class="text" onclick="calculateTax()">Calculate</span></button>
 
 		<!-- Usage Main this Button!! ------------------------------------------------------------>
 		<div class="categories">
@@ -70,29 +67,29 @@
 	<div class="container">
 		<h2>
 			<div align="left">
-				ผลการคำนวณ
+				Calculation Results
 			</div>
 		</h2>
 		<div id="result">
 			<div class="inputBox">
-				<input id="importDutyAmount" placeholder="อากรขาเข้า" name="text" required="" disabled="true">
-				<span>อากรขาเข้า (บาท):</span>
+				<input id="importDutyAmount" placeholder="Import Duty" name="text" required="" disabled="true">
+				<span>Import Duty (THB):</span>
 			</div>
 			<div class="inputBox">
-				<input id="vatAmount" placeholder="ภาษีมูลค่าเพิ่ม (VAT)" name="text" required="" disabled="true">
-				<span>ภาษีมูลค่าเพิ่ม (บาท):</span>
+				<input id="vatAmount" placeholder="Value Added Tax (VAT)" name="text" required="" disabled="true">
+				<span>Value Added Tax (THB):</span>
 			</div>
 			<div class="inputBox">
-				<input id="totalTaxAmount" placeholder="ยอดรวม" name="text" required="" disabled="true">
-				<span>ยอดภาษีนำเข้า</span>
+				<input id="totalTaxAmount" placeholder="Total Tax" name="text" required="" disabled="true">
+				<span>Total Import Tax (THB)</span>
 			</div>
 			<div class="inputBox-Result">
-				<input id="totalAmount" placeholder="ยอดรวมทั้งหมด" name="text" required="" disabled="true">
-				<span>ยอดสุทธิ</span>
+				<input id="totalAmount" placeholder="Total Amount" name="text" required="" disabled="true">
+				<span>Net Total</span>
 			</div>
-			<!-- <p id="importDuty">อากรขาเข้า (บาท): <span id="importDutyAmount">0</span></p> -->
-			<!-- <p id="vat">ภาษีมูลค่าเพิ่ม (บาท): <span id="vatAmount">0</span></p> -->
-			<!-- <p id="totalTax">ยอดภาษีนำเข้า (บาท): <span id="totalTaxAmount">0</span></p> -->
+			<!-- <p id="importDuty">Import Duty (THB): <span id="importDutyAmount">0</span></p> -->
+			<!-- <p id="vat">Value Added Tax (THB): <span id="vatAmount">0</span></p> -->
+			<!-- <p id="totalTax">Total Import Tax (THB): <span id="totalTaxAmount">0</span></p> -->
 		</div>
 	</div>
 	<!------------------------------------------------------------------------------------------>

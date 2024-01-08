@@ -1,4 +1,5 @@
 # Import Tax Calculator
+<img width="1470" alt="Screenshot 2567-01-03 at 22 02 13" src="https://github.com/Tisarji/tax-calculator/assets/48820052/2b5a3191-8388-4154-9973-3e909e083df0">
 
 This is a simple web-based import tax calculator designed to help users estimate the import duty and VAT (Value Added Tax) for goods based on the CIF (Cost, Insurance, and Freight) price and the specified import duty rate. The calculator also provides a list of product categories with predefined import duty rates for quick selection.
 
@@ -47,6 +48,10 @@ The product categories provided in the tool have predefined import duty rates. U
 ## Contributing
 
 Feel free to contribute to the development of this import tax calculator by creating issues, suggesting enhancements, or submitting pull requests.
+
+## Video
+
+https://github.com/Tisarji/tax-calculator/assets/48820052/4d49183d-ec62-4bb2-90d2-05cc9ac3994a
 
 ## License
 
