@@ -13,7 +13,7 @@
 <body>
 
 	<div class="container">
-		<h2>Calculate Import Tax</h2>
+		<h2 id="importTaxHeading">Calculate Import Tax</h2>
 
 		<!-- <label for="cifPrice">ราคา C.I.F. (บาท): </label>
 		<input type="text" id="cifPrice" placeholder="ระบุราคา C.I.F."> -->
@@ -22,12 +22,16 @@
 
 		<!-- Usage Main this!! ------------------------------------------------------------------>
 		<div class="inputBox">
-			<input id="cifPrice" placeholder="Enter C.I.F. Price" type="text" required="" oninput="calculateSalary">
-			<span>Price C.I.F. (THB):</span>
+			<input id="cifPrice" placeholder="Enter Cost Price" type="text" required="" oninput="calculateSalary">
+			<span>Price Cost (THB):</span>
 		</div>
 		<div class="inputBox">
 			<input id="importDutyRate" placeholder="Enter Import Duty Rate" name="text" required="" oninput="formatInputWithCommas(event)">
 			<span>Import Duty Rate (%):</span>
+		</div>
+		<div class="inputBox">
+			<input id="vatAsean" placeholder="Enter Vat Asean" name="text" required="" oninput="formatInputWithCommas(event)">
+			<span>Vat Asean (%):</span>
 		</div>
 		<!--------------------------------------------------------------------------------------->
 
@@ -72,19 +76,25 @@
 		</h2>
 		<div id="result">
 			<div class="inputBox">
-				<input id="importDutyAmount" placeholder="Import Duty" name="text" required="" disabled="true">
+				<input id="cifTotal" placeholder="C.I.F. Total!" name="text" required="" disabled="true">
+				<span>Total Cost (C.I.F.)</span>
+			</div>
+			<div class="inputBox">
+				<input id="importDutyAmount" placeholder="Import Duty!" name="text" required="" disabled="true">
 				<span>Import Duty (THB):</span>
 			</div>
 			<div class="inputBox">
-				<input id="vatAmount" placeholder="Value Added Tax (VAT)" name="text" required="" disabled="true">
+				<input id="vatAmount" placeholder="Value Added Tax (VAT)!" name="text" required="" disabled="true">
 				<span>Value Added Tax (THB):</span>
 			</div>
 			<div class="inputBox">
-				<input id="totalTaxAmount" placeholder="Total Tax" name="text" required="" disabled="true">
+				<input id="totalTaxAmount" placeholder="Total Tax!" name="text" required="" disabled="true">
 				<span>Total Import Tax (THB)</span>
 			</div>
+			<br>
+			<br>
 			<div class="inputBox-Result">
-				<input id="totalAmount" placeholder="Total Amount" name="text" required="" disabled="true">
+				<input id="totalAmount" placeholder="Total Amount!" name="text" required="" disabled="true">
 				<span>Net Total</span>
 			</div>
 			<!-- <p id="importDuty">Import Duty (THB): <span id="importDutyAmount">0</span></p> -->

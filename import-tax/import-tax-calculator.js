@@ -29,20 +29,23 @@ function formatInputWithCommas(event) {
 	let formattedValue = parseFloatWithCommas(inputValue).toLocaleString('en-US', {
 		minimumFractionDigits: 2,
 		maximumFractionDigits: 2
-    });
+	});
 	event.target.value = formattedValue;
 }
 
 function calculateTax() {
 	var cifPrice = parseFloatWithCommas(document.getElementById("cifPrice").value);
 	var importDutyRate = parseFloatWithCommas(document.getElementById("importDutyRate").value);
+	var vatAseanRate = parseFloatWithCommas(document.getElementById("vatAsean").value);
 
 	var importDuty = cifPrice * (importDutyRate / 100);
-	var vat = (cifPrice + importDuty) * 0.07;
-	var totalTax = importDuty + vat;
+	var vatAsean = cifPrice * (vatAseanRate / 100);
+	var totalTax = importDuty + vatAsean;
 
 	document.getElementById("importDutyAmount").value = formatNumberWithCommas(importDuty);
-	document.getElementById("vatAmount").value = formatNumberWithCommas(vat);
+	document.getElementById("vatAmount").value = formatNumberWithCommas(vatAsean); // Use vatAsean instead of vat
+	document.getElementById("vatAseanAmount").value = formatNumberWithCommas(vatAsean);
+
 	document.getElementById("totalTaxAmount").value = formatNumberWithCommas(totalTax);
 	document.getElementById("totalAmount").value = formatNumberWithCommas(cifPrice + totalTax);
 
@@ -82,3 +85,38 @@ document.getElementById('cifPrice').addEventListener('input', event => {
 			event.target.value += ".";
 	}
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+	const urlParams = new URLSearchParams(window.location.search);
+	const country = urlParams.get('country');
+	const vatRate = urlParams.get('vatRate');
+
+	if (country) {
+		document.getElementById('importTaxHeading').innerText = `Calculate Import Tax ${country}`;
+	}
+
+	if (vatRate) {
+		document.getElementById('vatAsean').value = vatRate;
+	}
+});
+
+document.getElementById('cifPrice').addEventListener('input', function(event) {
+	event.preventDefault();
+	calculateCIFTotal();
+});
+
+function calculateCIFTotal() {
+let cifPriceInput = document.getElementById("cifPrice");
+	let cifTotalInput = document.getElementById("cifTotal");
+
+	let cifPrice = parseFloatWithCommas(cifPriceInput.value);
+
+	let insuranceRate = 0.01;
+	let freightRate = 0.10;
+
+	let insurance = cifPrice * insuranceRate;
+	let freight = cifPrice * freightRate;
+	let cifTotal = cifPrice + insurance + freight;
+
+	cifTotalInput.value = formatNumberWithCommas(cifTotal);
+}
