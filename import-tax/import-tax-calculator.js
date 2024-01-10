@@ -138,5 +138,13 @@ $(document).ready(function() {
 		toggleSidebar();
 	  }
 	});
-  
-  });
+});
+
+function getCategoryImportDutyRate(category) {
+	switch (category) {
+		case 'accessory_no_battery':
+			return 30;
+		default:
+			return 0;
+	}
+}
