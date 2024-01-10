@@ -27,7 +27,7 @@ function formatInputWithCommas(event) {
 	inputValue = parts.join('.');
 
 	let formattedValue = parseFloatWithCommas(inputValue).toLocaleString('en-US', {
-		minimumFractionDigits: 2,
+		minimumFractionDigits: 0,
 		maximumFractionDigits: 2
 	});
 	event.target.value = formattedValue;
@@ -40,11 +40,12 @@ function calculateTax() {
 
 	var importDuty = cifPrice * (importDutyRate / 100);
 	var vatAsean = cifPrice * (vatAseanRate / 100);
+	var vatAseanAmount = vatAseanRate;
 	var totalTax = importDuty + vatAsean;
 
 	document.getElementById("importDutyAmount").value = formatNumberWithCommas(importDuty);
 	document.getElementById("vatAmount").value = formatNumberWithCommas(vatAsean); // Use vatAsean instead of vat
-	document.getElementById("vatAsean").value = formatNumberWithCommas(vatAsean);
+	document.getElementById("vatAsean").value = formatNumberWithCommas(vatAseanRate);
 
 	document.getElementById("totalTaxAmount").value = formatNumberWithCommas(totalTax);
 	document.getElementById("totalAmount").value = formatNumberWithCommas(cifPrice + totalTax);
@@ -120,3 +121,23 @@ let cifPriceInput = document.getElementById("cifPrice");
 
 	cifTotalInput.value = formatNumberWithCommas(cifTotal);
 }
+
+$(document).ready(function() {
+
+	function toggleSidebar() {
+	  $(".button").toggleClass("active");
+	  $("main").toggleClass("move-to-left");
+	  $(".sidebar-item").toggleClass("active");
+	}
+  
+	$(".button").on("click tap", function() {
+	  toggleSidebar();
+	});
+  
+	$(document).keyup(function(e) {
+	  if (e.keyCode === 27) {
+		toggleSidebar();
+	  }
+	});
+  
+  });
