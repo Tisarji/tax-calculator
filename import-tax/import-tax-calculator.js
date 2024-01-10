@@ -44,7 +44,7 @@ function calculateTax() {
 
 	document.getElementById("importDutyAmount").value = formatNumberWithCommas(importDuty);
 	document.getElementById("vatAmount").value = formatNumberWithCommas(vatAsean); // Use vatAsean instead of vat
-	document.getElementById("vatAseanAmount").value = formatNumberWithCommas(vatAsean);
+	document.getElementById("vatAsean").value = formatNumberWithCommas(vatAsean);
 
 	document.getElementById("totalTaxAmount").value = formatNumberWithCommas(totalTax);
 	document.getElementById("totalAmount").value = formatNumberWithCommas(cifPrice + totalTax);
