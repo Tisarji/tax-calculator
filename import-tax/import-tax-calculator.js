@@ -36,22 +36,21 @@ function formatInputWithCommas(event) {
 function calculateTax() {
 	var cifPrice = parseFloatWithCommas(document.getElementById("cifPrice").value);
 	var importDutyRate = parseFloatWithCommas(document.getElementById("importDutyRate").value);
-	var vatAseanRate = parseFloatWithCommas(document.getElementById("vatAsean").value);
+	var vatAseanRate = parseFloatWithCommas(document.getElementById("vatAseanRate").value);
 
 	var importDuty = cifPrice * (importDutyRate / 100);
 	var vatAsean = cifPrice * (vatAseanRate / 100);
-	var vatAseanAmount = vatAseanRate;
+
 	var totalTax = importDuty + vatAsean;
 
 	document.getElementById("importDutyAmount").value = formatNumberWithCommas(importDuty);
-	document.getElementById("vatAmount").value = formatNumberWithCommas(vatAsean); // Use vatAsean instead of vat
 	document.getElementById("vatAsean").value = formatNumberWithCommas(vatAseanRate);
-
 	document.getElementById("totalTaxAmount").value = formatNumberWithCommas(totalTax);
 	document.getElementById("totalAmount").value = formatNumberWithCommas(cifPrice + totalTax);
 
 	document.getElementById("result").scrollIntoView({ behavior: 'smooth' });
 }
+
 
 document.querySelectorAll('.button-category').forEach(button => {
 	button.addEventListener('click', function () {
@@ -90,14 +89,14 @@ document.getElementById('cifPrice').addEventListener('input', event => {
 document.addEventListener("DOMContentLoaded", function() {
 	const urlParams = new URLSearchParams(window.location.search);
 	const country = urlParams.get('country');
-	const vatRate = urlParams.get('vatRate');
+	const vatRate = urlParams.get('vatAseanRate');
 
 	if (country) {
 		document.getElementById('importTaxHeading').innerText = `Calculate Import Tax ${country}`;
 	}
 
 	if (vatRate) {
-		document.getElementById('vatAsean').value = vatRate;
+		document.getElementById('vatAseanRate').value = vatRate;
 	}
 });
 
