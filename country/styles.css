@@ -65,7 +65,6 @@ label {
 
 /* Button for Category! */
 .button-category {
-	
 	--b: 3px;   /* border thickness */
 	--s: .45em; /* size of the corner */
 	--color: #373B44;

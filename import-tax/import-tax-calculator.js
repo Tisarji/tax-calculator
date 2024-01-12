@@ -36,15 +36,13 @@ function formatInputWithCommas(event) {
 function calculateTax() {
 	var cifPrice = parseFloatWithCommas(document.getElementById("cifPrice").value);
 	var importDutyRate = parseFloatWithCommas(document.getElementById("importDutyRate").value);
-	var vatAseanRate = parseFloatWithCommas(document.getElementById("vatAseanRate").value);
 
 	var importDuty = cifPrice * (importDutyRate / 100);
-	var vatAsean = cifPrice * (vatAseanRate / 100);
-
-	var totalTax = importDuty + vatAsean;
+	var vat = (cifPrice + importDuty) * 0.07;
+	var totalTax = importDuty + vat;
 
 	document.getElementById("importDutyAmount").value = formatNumberWithCommas(importDuty);
-	document.getElementById("vatAsean").value = formatNumberWithCommas(vatAseanRate);
+	document.getElementById("vatAmount").value = formatNumberWithCommas(vat);
 	document.getElementById("totalTaxAmount").value = formatNumberWithCommas(totalTax);
 	document.getElementById("totalAmount").value = formatNumberWithCommas(cifPrice + totalTax);
 
