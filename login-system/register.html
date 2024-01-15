@@ -3,47 +3,56 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Infomation Register</title>
+	<title>Information Register</title>
 	<link rel="stylesheet" href="style.css">
 	<link rel="icon" href="../img/Tisarji.png" type="image/x-icon">
 </head>
+
 <body>
 	<div class="container">
 		<form autocomplete="off" id="form">
-			<h1 id="message">Infomation Register</h1>
+			<h1 id="message">Register</h1>
 			<small id="smallMessage"></small>
 
 			<div class="field">
-				<input type="text" name="full-name" placeholder="Full Name" id="full-name" autocomplete="off" >
+				<input type="text" name="full-name" placeholder="Full Name" id="full-name" autocomplete="off">
 				<label for="full-name">Full Name</label>
 			</div>
-			
-			<div class="field">
-				<input type="text" name="org-name" placeholder="Organization Name" id="org-name" autocomplete="organization-name">
-				<label for="org-name">Organization Name</label>
-			</div>
-			
-			<div class="field">
-				<input type="text" name="tax-id" placeholder="Tax ID" id="tax-id" autocomplete="new-password">
-				<label for="tax-id">Tax ID</label>
-			</div>
-			
+
 			<div class="field">
 				<input type="email" name="email" placeholder="Email Address" id="email" autocomplete="new-password">
 				<label for="email">Email Address</label>
 			</div>
-			
+
+			<div class="field">
+				<input type="password" name="password" placeholder="Password" id="password" autocomplete="new-password">
+				<label for="password">Password</label>
+			</div>
+
 			<div class="field">
 				<input type="tel" name="tel-number" placeholder="Tel Number" id="tel-number" autocomplete="tel">
 				<label for="tel-number">Tel Number</label>
 			</div>
-			
+
 			<div class="field">
-				<input type="text" name="org-location" placeholder="Organization Location" id="org-location" autocomplete="organization-location">
+				<input type="text" name="tax-id" placeholder="Tax ID" id="tax-id" autocomplete="new-password">
+				<label for="tax-id">Tax ID</label>
+			</div>
+
+			<div class="field">
+				<input type="text" name="org-name" placeholder="Organization Name" id="org-name"
+					autocomplete="organization-name">
+				<label for="org-name">Organization Name</label>
+			</div>
+
+			<div class="field">
+				<input type="text" name="org-location" placeholder="Organization Location" id="org-location"
+					autocomplete="organization-location">
 				<label for="org-location">Organization Location</label>
 			</div>
 
-			<a href="..\home.html"><button id="submit">Login</button></a>
+			<!-- <button type="button" id="register" onclick="registerUser()">Register</button> -->
+			<button type="submit" id="register">Register</button>
 			<p>By signing up, I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
 		</form>
 	</div>

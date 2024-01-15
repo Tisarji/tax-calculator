@@ -37,7 +37,7 @@
 	</nav>
 	<div class="container">
 		
-		<h2 id="importTaxHeading">Calculate Import Tax</h2>
+		<h2 id="importTaxHeading">Calculate Export Tax</h2>
 		<br>
 
 		<!-- Usage Main this!! ------------------------------------------------------------------>
@@ -46,12 +46,13 @@
 			<span>Price Cost (THB):</span>
 		</div>
 		<div class="inputBox">
-			<input id="importDutyRate" placeholder="Enter Import Duty Rate" name="text" required="" oninput="formatInputWithCommas(event)" disabled>
-			<span>Import Duty Rate (%):</span>
+			<input id="importDutyRate" placeholder="Enter Export Duty Rate" name="text" required=""
+				oninput="formatInputWithCommas(event)" disabled>
+			<span>Export Duty Rate (%):</span>
 		</div>
 		<div class="inputBox">
-			<input id="vatAseanRate" placeholder="Enter Vat Asean" disabled>
-			<span>Vat Asean (%):</span>
+			<input id="vatAseanRate" placeholder="VAT Asean" disabled>
+			<span>VAT Asean (%):</span>
 		</div>
 		<!--------------------------------------------------------------------------------------->
 		<button class="button-50" role="button" onclick="calculateTax()">Calculate</button>
@@ -83,8 +84,8 @@
 				<span>Total Cost (C.I.F.)</span>
 			</div>
 			<div class="inputBox">
-				<input id="importDutyAmount" placeholder="Import Duty!" name="text" required="" disabled="true">
-				<span>Import Duty (THB):</span>
+				<input id="importDutyAmount" placeholder="Export Duty!" name="text" required="" disabled="true">
+				<span>Export Duty (THB):</span>
 			</div>
 			<div class="inputBox">
 				<input id="vatAsean" placeholder="Value Added Tax (VAT)!" name="text" required="" disabled="true">
@@ -92,7 +93,7 @@
 			</div>
 			<div class="inputBox">
 				<input id="totalTaxAmount" placeholder="Total Tax!" name="text" required="" disabled="true">
-				<span>Total Import Tax (THB)</span>
+				<span>Total Export Tax (THB)</span>
 			</div>
 			<br>
 			<br>

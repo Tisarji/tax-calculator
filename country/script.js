@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	const vatRate = urlParams.get('vatAseanRate');
 
 	if (country) {
-		document.getElementById('importTaxHeading').innerText = `Calculate Import Tax ${country}`;
+		document.getElementById('importTaxHeading').innerText = `Calculate Export Tax ${country}`;
 	}
 
 	if (vatRate) {
