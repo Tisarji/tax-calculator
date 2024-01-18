@@ -38,8 +38,13 @@ function calculateTax() {
 	var importDutyRate = parseFloatWithCommas(document.getElementById("importDutyRate").value);
 	var vatAseanRate = parseFloatWithCommas(document.getElementById("vatAseanRate").value);
 
+	cifPrice = gobalcifTotal;
+
 	var importDuty = cifPrice * (importDutyRate / 100);
-	var vatAsean = cifPrice * (vatAseanRate / 100);
+	console.log("CIF Price = " + cifTotal);
+	console.log("Product Type = " + importDuty);
+	var totalTaxAsean = cifPrice * (vatAseanRate / 100);
+	var vatAsean = totalTaxAsean + importDuty * (vatAseanRate / 100);
 
 	var totalTax = importDuty + vatAsean;
 
@@ -105,8 +110,10 @@ document.getElementById('cifPrice').addEventListener('input', function(event) {
 	calculateCIFTotal();
 });
 
+let gobalcifTotal = 0;
+
 function calculateCIFTotal() {
-let cifPriceInput = document.getElementById("cifPrice");
+	let cifPriceInput = document.getElementById("cifPrice");
 	let cifTotalInput = document.getElementById("cifTotal");
 
 	let cifPrice = parseFloatWithCommas(cifPriceInput.value);
@@ -119,6 +126,7 @@ let cifPriceInput = document.getElementById("cifPrice");
 	let cifTotal = cifPrice + insurance + freight;
 
 	cifTotalInput.value = formatNumberWithCommas(cifTotal);
+	gobalcifTotal = cifTotal;
 }
 
 $(document).ready(function() {

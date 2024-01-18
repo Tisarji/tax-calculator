@@ -33,9 +33,13 @@ function formatInputWithCommas(event) {
 	event.target.value = formattedValue;
 }
 
+let gobalcifTotal = 0;
+
 function calculateTax() {
 	var cifPrice = parseFloatWithCommas(document.getElementById("cifPrice").value);
 	var importDutyRate = parseFloatWithCommas(document.getElementById("importDutyRate").value);
+
+	cifPrice = gobalcifTotal;
 
 	var importDuty = cifPrice * (importDutyRate / 100);
 	var vat = (cifPrice + importDuty) * 0.07;
@@ -115,6 +119,8 @@ let cifPriceInput = document.getElementById("cifPrice");
 	let insurance = cifPrice * insuranceRate;
 	let freight = cifPrice * freightRate;
 	let cifTotal = cifPrice + insurance + freight;
+
+	gobalcifTotal = cifTotal;
 
 	cifTotalInput.value = formatNumberWithCommas(cifTotal);
 }
